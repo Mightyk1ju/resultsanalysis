@@ -138,7 +138,7 @@ uploaded_file = st.file_uploader("Upload Excel or CSV file", type=["xlsx", "csv"
 df = pd.DataFrame() # Initialize df to avoid NameError if no file is uploaded
 if uploaded_file:
     try:
-        with st.spinner("Loading and processing data... This may take a moment."):
+        with st.spinner("Loading and processing data... This may take a moment."): # ADDED/UPDATED THIS LINE
             df, sheet_used, header_row = load_and_clean_data(uploaded_file)
         st.success(f"✅ Successfully loaded data from {'sheet' if sheet_used != 'N/A' else 'file'} '{uploaded_file.name}' using header row {header_row + 1}.")
 
